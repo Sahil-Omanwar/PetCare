@@ -5,7 +5,7 @@ import front from '../assets/front.png';
 const HomePage = () => {
   return (
     <div>
-      <Navbar />
+      
       <div className='h-screen bg-teal-600 w-full flex items-center'>
         {/* Content Section */}
         <div className='w-1/2 p-12 flex flex-col justify-center space-y-6'>
@@ -18,7 +18,7 @@ const HomePage = () => {
           <input
             type='text'
             placeholder='Search doctors,clinics...'
-            className='p-4 rounded-lg bg-white text-gray-800 placeholder-gray-500 shadow-md focus:outline-none focus:ring-2 focus:ring-teal-400'
+            className='p-4 rounded-lg bg-stone-200 text-gray-800 placeholder-gray-500 shadow-md focus:outline-none focus:ring-2 focus:ring-teal-400'
           />
         </div>
 
