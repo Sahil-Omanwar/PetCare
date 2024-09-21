@@ -21,7 +21,7 @@ const Navbar = () => {
     <div className='bg-stone-200 h-20 w-full flex items-center justify-between px-8'>
       <div>
         <Link to={'/'}>
-          <img src={logo1} alt="Logo" className='h-16 w-auto' />
+          <img src={logo1} alt="Logo" className='h-16 w-auto pl-20' />
         </Link>
       </div>
       <div className='flex space-x-4'>
