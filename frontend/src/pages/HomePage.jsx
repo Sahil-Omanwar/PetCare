@@ -2,6 +2,10 @@ import React from 'react';
 import Navbar from '../components/Navbar.jsx';
 import front from '../assets/front.png';
 import Cards from '../components/Cards.jsx';
+import Consult from '../components/Consult.jsx';
+import BooksAppointment from '../components/BooksAppointment.jsx';
+import HomeBlog from '../components/HomeBlog.jsx';
+import Feeback from '../components/Feeback.jsx';
 const HomePage = () => {
   return (
     <div>
@@ -29,6 +33,10 @@ const HomePage = () => {
       </div>
       
       <Cards></Cards>
+      <Consult></Consult>
+      <BooksAppointment></BooksAppointment>
+      <HomeBlog></HomeBlog>
+      <Feeback></Feeback>
     </div>
   );
 }

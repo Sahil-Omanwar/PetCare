@@ -5,6 +5,7 @@ import './App.css'
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import Navbar from './components/Navbar.jsx';
 import SignUpPage from './pages/SignupPage.jsx';
+import Footer from './components/Footer.jsx';
 
 function App() {
   
@@ -19,6 +20,7 @@ function App() {
 
 
       </Routes>
+      <Footer></Footer>
       
     </BrowserRouter>
   )
