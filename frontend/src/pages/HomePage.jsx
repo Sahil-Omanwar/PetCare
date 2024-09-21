@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar.jsx';
 import front from '../assets/front.png';
-
+import Cards from '../components/Cards.jsx';
 const HomePage = () => {
   return (
     <div>
@@ -27,7 +27,8 @@ const HomePage = () => {
           <img src={front} alt="Image of animal" className='w-full h-auto max-w-lg object-cover rounded-lg shadow-lg' />
         </div>
       </div>
-      <div className='h-20 bg-gray-200 w-full'></div>
+      
+      <Cards></Cards>
     </div>
   );
 }
