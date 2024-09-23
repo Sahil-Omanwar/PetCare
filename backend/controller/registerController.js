@@ -12,7 +12,7 @@ const registerUser=async(req,res)=>{
         })
     }catch(err){
         res.status(400).json({
-            message:"Error uploading Book",
+            message:"Error uploading ",
             sucess:false
         })
         console.log(err);
