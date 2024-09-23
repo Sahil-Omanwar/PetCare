@@ -15,7 +15,7 @@ const LoginPage = () => {
         console.log(result);
         if(result.data==="Success"){
           alert('successfull login')
-          navigate('/home');
+          navigate('/');
         }else{
           alert('Either email or password is incorrect')
         }
