@@ -7,6 +7,7 @@ import Navbar from './components/Navbar.jsx';
 import SignUpPage from './pages/SignupPage.jsx';
 import Footer from './components/Footer.jsx';
 import Blog from './pages/Blog.jsx';
+import About from './pages/About.jsx';
 
 function App() {
   
@@ -19,7 +20,7 @@ function App() {
         <Route path='/login' element={<LoginPage/>}/>
         <Route path='/signup' element={<SignUpPage/>}/>
         <Route path='/blog'element={<Blog/>}/>
-
+        <Route path='/about' element={<About/> }/>
 
       </Routes>
       <Footer></Footer>
