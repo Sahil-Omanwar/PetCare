@@ -8,7 +8,10 @@ import SignUpPage from './pages/SignupPage.jsx';
 import Footer from './components/Footer.jsx';
 import Blog from './pages/Blog.jsx';
 import About from './pages/About.jsx';
-import Services from './pages/Services.jsx'
+import Services from './pages/Services.jsx';
+import Sell from './pages/Sell.jsx';
+import AdoptPet from './pages/AdoptPet.jsx'
+import PetDescription from './pages/PetDescription.jsx';
 function App() {
   
 
@@ -22,6 +25,9 @@ function App() {
         <Route path='/blog'element={<Blog/>}/>
         <Route path='/about' element={<About/> }/>
         <Route path='/services' element={<Services/>}></Route>
+        <Route path='/sell' element={<Sell/>}></Route>
+        <Route path="/description/:petId" element={<PetDescription />} />
+        <Route path='/adopt' element={<AdoptPet/>}></Route>
       </Routes>
       <Footer></Footer>
       

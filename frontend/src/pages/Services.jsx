@@ -47,7 +47,7 @@ const Services = () => {
                 </Link>
 
                 {/* Pet Products */}
-                <Link to="/petproducts">
+                <Link to="/shop">
                     <div className='bg-teal-50 border rounded-lg shadow-lg p-6 flex flex-col items-center text-center hover:shadow-2xl transition-shadow duration-300'>
                         <img src={petproduct} alt="Pet Products" className='w-32 h-32 mb-4' />
                         <h2 className='text-2xl font-bold text-teal-600 mb-2'>Pet Products and Supplies</h2>
@@ -82,5 +82,6 @@ const Services = () => {
         </div>
     );
 };
+
 
 export default Services;
