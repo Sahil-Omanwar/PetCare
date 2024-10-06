@@ -13,8 +13,10 @@ const connectDB=require('./config/database.js')
 connectDB();
 const registerRoute =require('./routes/registerRoute.js')
 const blogRoute=require('./routes/blogRoute.js')
+const adoptRoute=require('./routes/adoptRoute.js')
 app.use("/new",registerRoute)
 app.use("/blog",blogRoute)
+app.use("/adopt",adoptRoute)
 app.get("/",function(req,res){
     console.log('sahil here');
 })
