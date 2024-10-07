@@ -22,15 +22,15 @@ const AdoptPet = () => {
 
   const handleSearch = async () => {
     try {
-        const response = await axios.get(`http://localhost:5050/adopt/search?type=${petType}`); // Search by pet type
-        setPets(response.data.pets || []); // Set the pets to display based on the search
+        const response = await axios.get(`http://localhost:5050/adopt/search?type=${petType}`);
+        setPets(response.data.pets || []);
     } catch (error) {
         console.error('Error fetching pets:', error);
     }
-};
+  };
 
   const handleCardClick = (petId) => {
-    navigate(`/description/${petId}`); // Redirect to the pet's description page
+    navigate(`/description/${petId}`);
   };
 
   return (
@@ -61,13 +61,13 @@ const AdoptPet = () => {
             <div
               key={pet._id}
               className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center transition-transform transform hover:scale-105 cursor-pointer"
-              onClick={() => handleCardClick(pet._id)} // Handle card click
+              onClick={() => handleCardClick(pet._id)}
             >
               <img src={pet.photoUrl} alt={pet.pet_name} className="w-full h-48 object-cover rounded-lg mb-4" />
               <h2 className="text-2xl font-bold text-teal-600 mb-2">{pet.pet_name}</h2>
-              <p className="text-gray-500 mb-1">Breed: {pet.breed}</p>
-              <p className="text-gray-500 mb-1">Price: ${pet.price}</p>
-              <p className="text-gray-700">{pet.about}</p>
+              <p className="text-gray-500 mb-1">Category: {pet.pet_category}</p>
+              <p className="text-gray-500 mb-1">Adoption Fee: ${pet.adoptionFee}</p>
+              <p className="text-gray-500">Age: {pet.age} years</p>
             </div>
           ))
         ) : (

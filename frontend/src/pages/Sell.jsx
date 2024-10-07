@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom'; // Import Link
 
 const Sell = () => {
   const [petDetails, setPetDetails] = useState({
@@ -250,10 +251,17 @@ const Sell = () => {
 
         <button
           type="submit"
-          className="bg-teal-600 text-white font-bold rounded-lg px-4 py-2 w-full">
+          className="bg-teal-600 text-white font-bold rounded-lg px-4 py-2 w-full mb-4">
           Submit
         </button>
       </form>
+
+      {/* Back button to navigate to '/adopt' */}
+      <Link to="/adopt">
+        <button className="bg-gray-300 text-gray-700 font-bold rounded-lg px-4 py-2 w-full">
+          Back to Adopt
+        </button>
+      </Link>
     </div>
   );
 };
