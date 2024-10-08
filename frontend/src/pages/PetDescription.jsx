@@ -3,9 +3,9 @@ import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 
 const PetDescription = () => {
-  const { petId } = useParams(); // Get the petId from the route
+  const { petId } = useParams();
   const [pet, setPet] = useState(null);
-  const navigate = useNavigate(); // Hook to navigate programmatically
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchPetDetails = async () => {
@@ -26,19 +26,19 @@ const PetDescription = () => {
 
   return (
     <div className="min-h-screen p-8 bg-gradient-to-r from-teal-400 to-blue-500 flex justify-center items-center">
-      <div className="max-w-4xl w-full bg-white p-8 rounded-lg shadow-lg">
+      <div className="max-w-3xl w-full bg-white p-6 rounded-lg shadow-lg">
         {/* Pet Image */}
         <img
           src={pet.photoUrl}
           alt={pet.pet_name}
-          className="w-full h-64 object-cover rounded-lg mb-6 shadow-md transition-transform transform hover:scale-105"
+          className="w-full h-48 object-contain rounded-lg mb-4 shadow-md transition-transform transform hover:scale-105"
         />
 
         {/* Pet Name */}
-        <h1 className="text-5xl font-extrabold text-teal-600 mb-6 text-center">{pet.pet_name}</h1>
+        <h1 className="text-4xl font-extrabold text-teal-600 mb-4 text-center">{pet.pet_name}</h1>
 
         {/* Pet Details */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-lg">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-lg">
           <p><strong className="text-teal-600">Pet Category:</strong> {pet.pet_category}</p>
           <p><strong className="text-teal-600">Breed:</strong> {pet.breed}</p>
           <p><strong className="text-teal-600">Owner Name:</strong> {pet.ownerName}</p>
@@ -53,17 +53,17 @@ const PetDescription = () => {
         </div>
 
         {/* Buttons */}
-        <div className="flex justify-between mt-8">
+        <div className="flex justify-between mt-6">
           {/* Back Button */}
           <button
-            onClick={() => navigate('/adopt')} // Navigate back to the Adopt page
-            className="bg-gray-300 text-gray-700 px-6 py-2 rounded-lg shadow-md hover:bg-gray-400 transition"
+            onClick={() => navigate('/adopt')}
+            className="bg-gray-300 text-gray-700 px-4 py-2 rounded-lg shadow-md hover:bg-gray-400 transition"
           >
             Back to Adopt
           </button>
 
           {/* Contact Owner Button */}
-          <a href={`tel:${pet.contact}`} className="bg-teal-600 text-white px-8 py-3 rounded-lg shadow-md hover:bg-teal-700 transition">
+          <a href={`tel:${pet.contact}`} className="bg-teal-600 text-white px-6 py-2 rounded-lg shadow-md hover:bg-teal-700 transition">
             Contact Owner
           </a>
         </div>
