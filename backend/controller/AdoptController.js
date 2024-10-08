@@ -40,7 +40,7 @@ const searchPetsByType = async (req, res) => {
     const petType = req.query.type; // Get the pet type from query parameters
 
     try {
-        const pets = await adopt.find({ type: petType }); // Search for pets of the specified type
+        const pets = await adopt.find({ pet_category: petType }); // Search by pet_category
         if (pets.length === 0) {
             return res.status(404).json({ message: 'No pets found of this type', success: false });
         }
@@ -50,6 +50,7 @@ const searchPetsByType = async (req, res) => {
         res.status(500).json({ message: 'Error retrieving pets', success: false });
     }
 };
+
 const searchPetsById = async (req, res) => {
     try {
         const { type } = req.query;
