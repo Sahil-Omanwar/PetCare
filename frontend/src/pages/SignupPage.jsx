@@ -11,7 +11,7 @@ const SignUpPage = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:5050/new/register', { name, email, password })
+        axios.post('https://petcare-mwd7.onrender.com/new/register', { name, email, password })
             .then(result => {
                 console.log(result);
                 alert("Successfully registered, please login again.");

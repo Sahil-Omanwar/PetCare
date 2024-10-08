@@ -24,7 +24,7 @@ const BookAppointment = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await axios.post('http://localhost:5050/appointment', formData);
+      const response = await axios.post('https://petcare-mwd7.onrender.com/appointment', formData);
       if (response.data.success) {
         alert('Appointment successfully created! Our registered doctors will contact you immediately.');
         setFormData({

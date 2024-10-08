@@ -13,7 +13,7 @@ const Blog = () => {
   const cardColors = ['bg-blue-100', 'bg-teal-100', 'bg-yellow-100', 'bg-green-100'];
 
   useEffect(() => {
-    axios.get('http://localhost:5050/blog/view')
+    axios.get('https://petcare-mwd7.onrender.com/blog/view')
       .then((response) => {
         setBlogs(response.data);
       })
@@ -27,7 +27,7 @@ const Blog = () => {
 
     const newBlog = { author, hospitalName, cityName, title, blog: blogContent };
 
-    axios.post('http://localhost:5050/blog/create-blog', newBlog)
+    axios.post('https://petcare-mwd7.onrender.com/blog/create-blog', newBlog)
       .then((response) => {
         if (response.data.success) {
           setBlogs([response.data.data, ...blogs]);

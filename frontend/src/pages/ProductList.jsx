@@ -11,7 +11,7 @@ const ProductList = () => {
         setLoading(true);
         setError(null);
         try {
-            const response = await axios.get('http://localhost:5050/shop/view-product');
+            const response = await axios.get('https://petcare-mwd7.onrender.com/shop/view-product');
             if (response.data.success) {
                 const limitedProducts = response.data.products.slice(0, 10);
                 setProducts(limitedProducts);

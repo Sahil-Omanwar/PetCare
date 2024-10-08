@@ -31,7 +31,7 @@ const Listing = () => {
         setError(null);
 
         try {
-            const response = await axios.post('http://localhost:5050/shop/list-product', formData);
+            const response = await axios.post('https://petcare-mwd7.onrender.com/shop/list-product', formData);
             if (response.data.success) {
                 alert('Product successfully listed!');
                 setFormData({

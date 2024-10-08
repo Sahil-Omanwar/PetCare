@@ -10,7 +10,7 @@ const AdoptPet = () => {
   useEffect(() => {
     const fetchPets = async () => {
       try {
-        const response = await axios.get('http://localhost:5050/adopt/view-all');
+        const response = await axios.get('https://petcare-mwd7.onrender.com/adopt/view-all');
         setPets(response.data.pets || []);
       } catch (error) {
         console.error('Error fetching pets:', error);
@@ -22,7 +22,7 @@ const AdoptPet = () => {
 
   const handleSearch = async () => {
     try {
-      const response = await axios.get(`http://localhost:5050/adopt/search?type=${petType}`);
+      const response = await axios.get(`https://petcare-mwd7.onrender.com/adopt/search?type=${petType}`);
       setPets(response.data.pets || []);
     } catch (error) {
       console.error('Error fetching pets:', error);

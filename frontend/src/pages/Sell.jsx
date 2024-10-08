@@ -34,7 +34,7 @@ const Sell = () => {
     };
 
     try {
-      const response = await axios.post('http://localhost:5050/adopt/sell-pet', modifiedPetDetails);
+      const response = await axios.post('https://petcare-mwd7.onrender.com/adopt/sell-pet', modifiedPetDetails);
       alert(response.data.message); // Notify user on success
       setPetDetails({
         pet_name: '',
