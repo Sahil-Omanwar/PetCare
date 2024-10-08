@@ -13,6 +13,8 @@ import Sell from './pages/Sell.jsx';
 import AdoptPet from './pages/AdoptPet.jsx'
 import PetDescription from './pages/PetDescription.jsx';
 import BookAppointment from './pages/BookAppointment.jsx';
+import ProductList from './pages/ProductList.jsx';
+import Listing from './pages/Listing.jsx';
 function App() {
   
 
@@ -30,6 +32,8 @@ function App() {
         <Route path="/description/:petId" element={<PetDescription />} />
         <Route path='/adopt' element={<AdoptPet/>}></Route>
         <Route path='/appointment' element={<BookAppointment/>}></Route>
+        <Route path='/shop' element={<ProductList/>}></Route>
+        <Route path='/listing' element={<Listing/>}></Route>
       </Routes>
       <Footer></Footer>
       
