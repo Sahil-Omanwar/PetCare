@@ -15,10 +15,12 @@ const registerRoute =require('./routes/registerRoute.js')
 const blogRoute=require('./routes/blogRoute.js')
 const adoptRoute=require('./routes/adoptRoute.js')
 const appointRoute=require('./routes/appointRoute.js')
+const shopRoute=require('./routes/shopRoute.js')
 app.use("/new",registerRoute)
 app.use("/blog",blogRoute)
 app.use("/adopt",adoptRoute)
 app.use("/appointment",appointRoute)
+app.use("/shop",shopRoute)
 app.get("/",function(req,res){
     console.log('sahil here');
 })
