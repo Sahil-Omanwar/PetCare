@@ -12,6 +12,7 @@ import Services from './pages/Services.jsx';
 import Sell from './pages/Sell.jsx';
 import AdoptPet from './pages/AdoptPet.jsx'
 import PetDescription from './pages/PetDescription.jsx';
+import BookAppointment from './pages/BookAppointment.jsx';
 function App() {
   
 
@@ -28,6 +29,7 @@ function App() {
         <Route path='/sell' element={<Sell/>}></Route>
         <Route path="/description/:petId" element={<PetDescription />} />
         <Route path='/adopt' element={<AdoptPet/>}></Route>
+        <Route path='/appointment' element={<BookAppointment/>}></Route>
       </Routes>
       <Footer></Footer>
       
