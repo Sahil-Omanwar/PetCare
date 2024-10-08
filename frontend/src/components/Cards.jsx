@@ -5,11 +5,11 @@ import online_video from '../assets/online_video.png';
 
 const Cards = () => {
   return (
-    <div className='flex justify-center pt-20 space-x-8'>
+    <div className='flex flex-col items-center pt-20 space-y-8 md:space-y-0 md:flex-row md:justify-center md:space-x-8'>
       {/* First Card */}
-      <div className='bg-teal-600 h-80 w-64 p-4 rounded-xl transform transition-transform hover:scale-105 hover:shadow-2xl shadow-lg text-white'>
+      <div className='bg-teal-600 h-64 w-64 p-4 rounded-xl transform transition-transform hover:scale-105 hover:shadow-2xl shadow-lg text-white'>
         <div className='flex justify-center'>
-          <img src={online_video} className='h-40 w-60 rounded-md object-cover' alt="Online Video" />
+          <img src={online_video} className='h-32 w-56 rounded-md object-cover' alt="Online Video" />
         </div>
         <div className='mt-4 text-center'>
           <h3 className='text-lg font-semibold'>Instant Video Consultation</h3>
@@ -18,9 +18,9 @@ const Cards = () => {
       </div>
 
       {/* Second Card */}
-      <div className='bg-teal-600 h-80 w-64 p-4 rounded-xl transform transition-transform hover:scale-105 hover:shadow-2xl shadow-lg text-white'>
+      <div className='bg-teal-600 h-64 w-64 p-4 rounded-xl transform transition-transform hover:scale-105 hover:shadow-2xl shadow-lg text-white'>
         <div className='flex justify-center'>
-          <img src={find_doctor} className='h-40 w-60 rounded-md object-cover' alt="Find Doctor" />
+          <img src={find_doctor} className='h-32 w-56 rounded-md object-cover' alt="Find Doctor" />
         </div>
         <div className='mt-4 text-center'>
           <h3 className='text-lg font-semibold'>Find Doctor Near You</h3>
@@ -29,9 +29,9 @@ const Cards = () => {
       </div>
 
       {/* Third Card */}
-      <div className='bg-teal-600 h-80 w-64 p-4 rounded-xl transform transition-transform hover:scale-105 hover:shadow-2xl shadow-lg text-white'>
+      <div className='bg-teal-600 h-64 w-64 p-4 rounded-xl transform transition-transform hover:scale-105 hover:shadow-2xl shadow-lg text-white'>
         <div className='flex justify-center'>
-          <img src={sergery} className='h-40 w-60 rounded-md object-cover' alt="Surgery" />
+          <img src={sergery} className='h-32 w-56 rounded-md object-cover' alt="Surgery" />
         </div>
         <div className='mt-4 text-center'>
           <h3 className='text-lg font-semibold'>Surgery Consultation</h3>

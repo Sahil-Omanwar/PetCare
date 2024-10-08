@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 
 const Blog = () => {
   const [blogs, setBlogs] = useState([]);
   const [author, setAuthor] = useState('');
   const [hospitalName, setHospitalName] = useState('');
   const [cityName, setCityName] = useState('');
-  const [title, setTitle] = useState(''); // New title state
+  const [title, setTitle] = useState('');
   const [blogContent, setBlogContent] = useState('');
-  const [selectedBlog, setSelectedBlog] = useState(null); // To track clicked blog
+  const [selectedBlog, setSelectedBlog] = useState(null);
 
   const cardColors = ['bg-blue-100', 'bg-teal-100', 'bg-yellow-100', 'bg-green-100'];
 
-  // Fetch blogs on page load
   useEffect(() => {
     axios.get('http://localhost:5050/blog/view')
       .then((response) => {
@@ -24,7 +22,6 @@ const Blog = () => {
       });
   }, []);
 
-  // Handle blog creation
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -49,29 +46,29 @@ const Blog = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-blue-500 to-teal-500 p-8">
+    <div className="min-h-screen bg-gradient-to-r from-blue-500 to-teal-500 p-4 md:p-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold text-white text-center mb-8">Read Blogs</h1>
+        <h1 className="text-3xl md:text-4xl font-bold text-white text-center mb-8">Read Blogs</h1>
 
         {/* Blog Cards */}
         {!selectedBlog ? (
           <>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12">
               {blogs.map((blog, index) => (
                 <div
                   key={index}
-                  className={`rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300 cursor-pointer ${cardColors[index % cardColors.length]}`}
-                  onClick={() => setSelectedBlog(blog)} // On click, show full blog
+                  className={`rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow duration-300 cursor-pointer ${cardColors[index % cardColors.length]} flex flex-col`}
+                  onClick={() => setSelectedBlog(blog)}
                 >
-                  <h2 className="text-2xl font-bold text-teal-600 mb-2">{blog.title}</h2>
-                  <h3 className="text-lg font-semibold text-gray-700 mb-2">{blog.author}</h3>
-                  <p className="text-gray-600">{blog.hospitalName} - {blog.cityName}</p>
+                  <h2 className="text-xl md:text-2xl font-bold text-teal-600 mb-2">{blog.title}</h2>
+                  <h3 className="text-lg font-semibold text-gray-700 mb-1">{blog.author}</h3>
+                  <p className="text-gray-600 text-sm md:text-base">{blog.hospitalName} - {blog.cityName}</p>
                 </div>
               ))}
             </div>
 
             {/* Create Blog Form */}
-            <div className="bg-white rounded-lg shadow-lg p-8 max-w-xl mx-auto">
+            <div className="bg-white rounded-lg shadow-lg p-4 md:p-8 max-w-xl mx-auto">
               <h2 className="text-2xl font-bold text-teal-600 mb-4">Create a Blog</h2>
               <form onSubmit={handleSubmit}>
                 <div className="mb-4">
@@ -130,9 +127,9 @@ const Blog = () => {
             </div>
           </>
         ) : (
-          <div className="bg-white rounded-lg shadow-lg p-8 max-w-xl mx-auto">
-            <h2 className="text-4xl font-bold text-teal-600 mb-4">{selectedBlog.title}</h2>
-            <h3 className="text-2xl font-semibold text-gray-700 mb-4">{selectedBlog.author}</h3>
+          <div className="bg-white rounded-lg shadow-lg p-4 md:p-8 max-w-xl mx-auto">
+            <h2 className="text-2xl md:text-4xl font-bold text-teal-600 mb-4">{selectedBlog.title}</h2>
+            <h3 className="text-xl md:text-2xl font-semibold text-gray-700 mb-4">{selectedBlog.author}</h3>
             <p className="text-lg text-gray-700 mb-2">{selectedBlog.hospitalName}, {selectedBlog.cityName}</p>
             <p className="text-gray-600">{selectedBlog.blog}</p>
             <button

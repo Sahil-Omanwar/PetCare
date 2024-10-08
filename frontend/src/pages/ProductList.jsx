@@ -19,7 +19,7 @@ const ProductList = () => {
                 setError(response.data.message);
             }
         } catch (err) {
-            setError();
+            setError('Failed to fetch products. Please try again later.'); // Added error message
         } finally {
             setLoading(false);
         }
@@ -30,8 +30,8 @@ const ProductList = () => {
     }, []);
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-green-400 to-blue-500 p-8">
-            <div className="bg-white shadow-lg rounded-lg p-8 max-w-6xl w-full">
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-green-400 to-blue-500 p-4 md:p-8">
+            <div className="bg-white shadow-lg rounded-lg p-6 md:p-8 max-w-6xl w-full">
                 <h2 className="text-3xl font-bold text-center text-teal-600 mb-6">Product List</h2>
 
                 <div className="text-center mb-6">
@@ -46,7 +46,7 @@ const ProductList = () => {
                 {error && <p className="text-center text-red-500">{error}</p>}
 
                 {products.length > 0 ? (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                         {products.map((product) => (
                             <div key={product._id} className="bg-gray-100 p-5 rounded-lg shadow-md">
                                 <img src={product.productPhoto} alt={product.productName} className="w-full h-48 object-cover rounded-lg mb-4" />

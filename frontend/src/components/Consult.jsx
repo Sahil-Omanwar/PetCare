@@ -10,11 +10,11 @@ const Consult = () => {
     <div className='pt-10 bg-teal-600 h-auto w-full flex flex-col items-center mt-20'>
       {/* Heading with larger size */}
       <div className='mb-8'>
-        <h1 className='text-white text-4xl font-bold'>Consult Top Doctors For</h1>
+        <h1 className='text-white text-4xl font-bold text-center'>Consult Top Doctors For</h1>
       </div>
 
       {/* Grid layout for images */}
-      <div className='grid grid-cols-2 md:grid-cols-5 gap-8'>
+      <div className='grid grid-cols-2 gap-8 md:grid-cols-5'>
         {/* Bacterial Diseases */}
         <div className='flex flex-col items-center text-center'>
           <div className='w-32 h-32 rounded-full overflow-hidden border-4 border-white transform transition-transform duration-300 hover:scale-110 hover:border-yellow-400'>

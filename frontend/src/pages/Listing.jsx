@@ -60,9 +60,9 @@ const Listing = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-green-400 to-blue-500 p-8">
-            <div className="bg-white shadow-lg rounded-lg p-8 max-w-lg w-full">
-                <h2 className="text-3xl font-bold text-center text-teal-600 mb-6">List a New Product</h2>
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-green-400 to-blue-500 p-4 md:p-8">
+            <div className="bg-white shadow-lg rounded-lg p-6 md:p-8 max-w-lg w-full">
+                <h2 className="text-2xl md:text-3xl font-bold text-center text-teal-600 mb-4">List a New Product</h2>
                 {error && <p className="text-red-500 text-center mb-4">{error}</p>}
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <input

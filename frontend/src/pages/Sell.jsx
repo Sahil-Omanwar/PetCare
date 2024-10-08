@@ -58,120 +58,47 @@ const Sell = () => {
   };
 
   return (
-    <div className="min-h-screen p-8 bg-gray-100">
+    <div className="min-h-screen p-4 sm:p-8 bg-gray-100">
       <h1 className="text-4xl font-bold text-center text-teal-600 mb-8">Sell a Pet</h1>
-      <form onSubmit={handleSubmit} className="max-w-lg mx-auto bg-white rounded-lg shadow-lg p-8">
-        <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2" htmlFor="pet_name">
-            Pet Name
-          </label>
-          <input
-            type="text"
-            name="pet_name"
-            value={petDetails.pet_name}
-            onChange={handleChange}
-            required
-            className="border rounded-lg w-full p-2"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2" htmlFor="pet_category">
-            Pet Category
-          </label>
-          <input
-            type="text"
-            name="pet_category"
-            value={petDetails.pet_category}
-            onChange={handleChange}
-            required
-            className="border rounded-lg w-full p-2"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2" htmlFor="breed">
-            Breed
-          </label>
-          <input
-            type="text"
-            name="breed"
-            value={petDetails.breed}
-            onChange={handleChange}
-            required
-            className="border rounded-lg w-full p-2"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2" htmlFor="ownerName">
-            Owner Name
-          </label>
-          <input
-            type="text"
-            name="ownerName"
-            value={petDetails.ownerName}
-            onChange={handleChange}
-            required
-            className="border rounded-lg w-full p-2"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2" htmlFor="age">
-            Age (in years)
-          </label>
-          <input
-            type="number"
-            name="age"
-            value={petDetails.age}
-            onChange={handleChange}
-            required
-            className="border rounded-lg w-full p-2"
-            min="0"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2" htmlFor="about">
-            About the Pet
-          </label>
-          <textarea
-            name="about"
-            value={petDetails.about}
-            onChange={handleChange}
-            className="border rounded-lg w-full p-2"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2" htmlFor="address">
-            Address
-          </label>
-          <input
-            type="text"
-            name="address"
-            value={petDetails.address}
-            onChange={handleChange}
-            required
-            className="border rounded-lg w-full p-2"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2" htmlFor="contact">
-            Contact Number
-          </label>
-          <input
-            type="tel"
-            name="contact"
-            value={petDetails.contact}
-            onChange={handleChange}
-            required
-            className="border rounded-lg w-full p-2"
-            maxLength="10"
-          />
-        </div>
+      <form onSubmit={handleSubmit} className="max-w-lg mx-auto bg-white rounded-lg shadow-lg p-6 sm:p-8">
+        {/** Form Fields */}
+        {[
+          { label: 'Pet Name', name: 'pet_name', type: 'text', required: true },
+          { label: 'Pet Category', name: 'pet_category', type: 'text', required: true },
+          { label: 'Breed', name: 'breed', type: 'text', required: true },
+          { label: 'Owner Name', name: 'ownerName', type: 'text', required: true },
+          { label: 'Age (in years)', name: 'age', type: 'number', required: true, min: 0 },
+          { label: 'About the Pet', name: 'about', type: 'textarea', required: false },
+          { label: 'Address', name: 'address', type: 'text', required: true },
+          { label: 'Contact Number', name: 'contact', type: 'tel', required: true, maxLength: 10 },
+          { label: 'Adoption Fee', name: 'adoptionFee', type: 'number', required: true, min: 0 },
+          { label: 'Pet Image URL', name: 'photoUrl', type: 'url', required: true },
+        ].map(({ label, name, type, required, min, maxLength }, index) => (
+          <div className="mb-4" key={index}>
+            <label className="block text-gray-700 font-bold mb-2" htmlFor={name}>
+              {label}
+            </label>
+            {type === 'textarea' ? (
+              <textarea
+                name={name}
+                value={petDetails[name]}
+                onChange={handleChange}
+                className="border rounded-lg w-full p-2"
+              />
+            ) : (
+              <input
+                type={type}
+                name={name}
+                value={petDetails[name]}
+                onChange={handleChange}
+                required={required}
+                min={min}
+                maxLength={maxLength}
+                className="border rounded-lg w-full p-2"
+              />
+            )}
+          </div>
+        ))}
 
         <div className="mb-4">
           <label className="block text-gray-700 font-bold mb-2" htmlFor="healthStatus">
@@ -203,35 +130,6 @@ const Sell = () => {
             <option value="Yes">Yes</option>
             <option value="No">No</option>
           </select>
-        </div>
-
-        <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2" htmlFor="adoptionFee">
-            Adoption Fee
-          </label>
-          <input
-            type="number"
-            name="adoptionFee"
-            value={petDetails.adoptionFee}
-            onChange={handleChange}
-            required
-            className="border rounded-lg w-full p-2"
-            min="0"
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2" htmlFor="photoUrl">
-            Pet Image URL
-          </label>
-          <input
-            type="url"
-            name="photoUrl"
-            value={petDetails.photoUrl}
-            onChange={handleChange}
-            required
-            className="border rounded-lg w-full p-2"
-          />
         </div>
 
         <div className="mb-4">

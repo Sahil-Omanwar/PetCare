@@ -9,24 +9,23 @@ const LoginPage = () => {
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // Fixed typo
+    e.preventDefault();
     axios.post('http://localhost:5050/new/login', { email, password })
       .then((result) => {
         console.log(result);
-        if(result.data==="Success"){
-          alert('successfull login')
+        if (result.data === "Success") {
+          alert('successful login');
           navigate('/');
-        }else{
-          alert('Either email or password is incorrect')
+        } else {
+          alert('Either email or password is incorrect');
         }
-         // Fixed 'Navigate' to lowercase 'navigate'
       })
       .catch((err) => console.log(err));
   };
 
   return (
-    <div className="bg-gradient-to-r from-teal-600 to-blue-500 flex justify-center items-center h-screen">
-      <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
+    <div className="bg-gradient-to-r from-teal-600 to-blue-500 flex justify-center items-center min-h-screen p-4">
+      <div className="bg-white shadow-lg rounded-lg p-6 md:p-8 w-full max-w-md">
         <div className="flex justify-center mb-4">
           <img src={logo} alt="Logo" className="h-16 mb-4" />
         </div>
@@ -40,6 +39,7 @@ const LoginPage = () => {
               type="email"
               placeholder="Enter your email here"
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
           </div>
 
@@ -49,7 +49,9 @@ const LoginPage = () => {
             <input
               className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500 transition duration-200"
               type="password"
+              placeholder="Enter your password here"
               onChange={(e) => setPassword(e.target.value)}
+              required
             />
           </div>
 

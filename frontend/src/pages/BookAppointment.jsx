@@ -26,7 +26,7 @@ const BookAppointment = () => {
     try {
       const response = await axios.post('http://localhost:5050/appointment', formData);
       if (response.data.success) {
-        alert('Appointment successfully created!Our registered doctors will contact you immediently');
+        alert('Appointment successfully created! Our registered doctors will contact you immediately.');
         setFormData({
           ownerName: '',
           petCategory: '',
@@ -47,8 +47,8 @@ const BookAppointment = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-green-400 to-blue-500 p-8">
-      <div className="bg-white shadow-lg rounded-lg p-8 max-w-lg w-full">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-green-400 to-blue-500 p-4 sm:p-8">
+      <div className="bg-white shadow-lg rounded-lg p-6 sm:p-8 max-w-lg w-full">
         <h2 className="text-3xl font-bold text-center text-teal-600 mb-6">Book an Appointment</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <input

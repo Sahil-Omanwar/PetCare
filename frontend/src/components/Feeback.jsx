@@ -14,7 +14,7 @@ const Feedback = () => {
       {/* Flex layout for user feedback */}
       <div className='flex flex-col md:flex-row md:justify-between md:px-4 w-full'>
         {/* User Feedback 1 */}
-        <div className='flex flex-col items-center text-center bg-white rounded-lg p-4 shadow-lg transform transition-transform duration-300 hover:scale-105 mx-2 my-4 md:my-0'>
+        <div className='flex flex-col items-center text-center bg-white rounded-lg p-4 shadow-lg transform transition-transform duration-300 hover:scale-105 mx-2 my-4 md:my-0 md:w-1/3'>
           <div className='w-32 h-32 rounded-full overflow-hidden border-4 border-teal-600 transform transition-transform duration-300 hover:scale-110'>
             <img src={user1} alt="User Feedback" className='w-full h-full object-cover' />
           </div>
@@ -22,7 +22,7 @@ const Feedback = () => {
         </div>
 
         {/* User Feedback 2 */}
-        <div className='flex flex-col items-center text-center bg-white rounded-lg p-4 shadow-lg transform transition-transform duration-300 hover:scale-105 mx-2 my-4 md:my-0'>
+        <div className='flex flex-col items-center text-center bg-white rounded-lg p-4 shadow-lg transform transition-transform duration-300 hover:scale-105 mx-2 my-4 md:my-0 md:w-1/3'>
           <div className='w-32 h-32 rounded-full overflow-hidden border-4 border-teal-600 transform transition-transform duration-300 hover:scale-110'>
             <img src={user2} alt="User Feedback" className='w-full h-full object-cover' />
           </div>
@@ -30,7 +30,7 @@ const Feedback = () => {
         </div>
 
         {/* User Feedback 3 */}
-        <div className='flex flex-col items-center text-center bg-white rounded-lg p-4 shadow-lg transform transition-transform duration-300 hover:scale-105 mx-2 my-4 md:my-0'>
+        <div className='flex flex-col items-center text-center bg-white rounded-lg p-4 shadow-lg transform transition-transform duration-300 hover:scale-105 mx-2 my-4 md:my-0 md:w-1/3'>
           <div className='w-32 h-32 rounded-full overflow-hidden border-4 border-teal-600 transform transition-transform duration-300 hover:scale-110'>
             <img src={user3} alt="User Feedback" className='w-full h-full object-cover' />
           </div>

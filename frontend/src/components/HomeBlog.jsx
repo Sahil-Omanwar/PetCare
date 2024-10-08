@@ -11,7 +11,7 @@ const HomeBlog = () => {
         <h2 className='text-teal-600 text-3xl font-bold'>Read Our Blog</h2>
         <p className='text-gray-700 mt-2'>Explore insightful articles on pet care and health.</p>
       </div>
-      <div className='flex justify-center pt-20 space-x-8'>
+      <div className='flex flex-col md:flex-row justify-center pt-20 space-y-8 md:space-y-0 md:space-x-8'>
         {/* First Card */}
         <Link to="/blog" className='bg-teal-600 h-80 w-64 p-4 rounded-xl transform transition-transform hover:scale-105 hover:shadow-2xl shadow-lg text-white'>
           <div className='flex justify-center'>
